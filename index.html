@@ -3,15 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mini Deep Thought</title>
+    <title>Deep Thought Mini Tutor</title>
     <style>
         canvas {
             border: 1px solid black;
+            background-color: #f4f4f4;
         }
 
         #goal {
             font-size: 24px;
             font-weight: bold;
+            margin: 10px;
+            display: none;
+            /* hidden by default */
+        }
+
+        #modeButtons {
             margin: 10px;
         }
     </style>
@@ -19,17 +26,25 @@
 
 <body>
 
+    <!-- Mode Selection Buttons -->
+    <div id="modeButtons">
+        <button onclick="location.href='index.html?mode=worked'">Show Worked Example</button>
+        <button onclick="location.href='index.html?mode=interactive'">Try It Yourself</button>
+    </div>
+
+    <!-- Goal Display -->
     <div id="goal">Goal: Q</div>
+
+    <!-- Canvas for Blocks -->
     <canvas id="blockCanvas" width="800" height="600"></canvas>
 
-    <!-- CreateJS Library -->
+    <!-- Scripts -->
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-
-    <!-- Your Modular JS Files -->
     <script src="Problem.js"></script>
     <script src="Block.js"></script>
     <script src="Rule.js"></script>
-    <script src="index.js"></script>
+    <script src="WorkedExamplePlayer.js"></script>
+    <script src="Index.js"></script>
 
 </body>
 

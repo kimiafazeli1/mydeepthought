@@ -1,4 +1,3 @@
-// Rule.js — defines the Modus Ponens rule button
 function createRuleButton(onClick) {
     const container = new createjs.Container();
 
@@ -16,7 +15,18 @@ function createRuleButton(onClick) {
     container.x = 300;
     container.y = 270;
 
-    container.on("click", onClick);
+    container.on("click", () => {
+        if (
+            selectedBlocks.length === 2 &&
+            selectedBlocks.some(b => b.blockText.includes("→")) &&
+            selectedBlocks.some(b => !b.blockText.includes("→"))
+        ) {
+            onClick(); // allow rule
+        } else {
+            alert("❌ Select exactly 2 blocks: one with → and one without.");
+        }
+        selectedBlocks = [];  // clear selection
+    });
 
     return container;
 }
