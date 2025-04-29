@@ -3,22 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Deep Thought Block Demo</title>
+    <title>Tiny Deep Thought Demo</title>
     <style>
         canvas {
-            border: 1px solid rgb(9, 9, 9);
+            border: 1px solid black;
+        }
+
+        #goal {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Deep Thought Block Demo</h1>
+    <div id="goal">Goal: Q</div>
+    <canvas id="blockCanvas" width="800" height="600"></canvas>
 
-    <!-- Canvas for drawing -->
-    <canvas id="blockCanvas" width="600" height="400"></canvas>
-
-    <!-- Load CreateJS before your script -->
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     <script src="script.js"></script>
 
